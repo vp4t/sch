@@ -24,13 +24,14 @@
 		</script>
 		<!-- End Google Tag Manager -->		
 		
-<!-- 		<script>
-			ga(function(tracker) { 
-				var clientId = tracker.get('clientId'); 
-			});
-		</script> -->
-		
 		<script>
+			(ga(function(tracker) { 
+				var clientId = tracker.get('clientId'); 
+				});
+			)
+		</script>
+		
+<!-- 		<script>
 			(function(i)	{
 					var match = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)');
 					var raw = (match) ? decodeURIComponent(match[1]) : null;
@@ -44,7 +45,7 @@
 								return gacid;
 							}
 				}) ('clientId');
-		</script>
+		</script> -->
 		
 	</head>
 	<body>
