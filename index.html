@@ -95,21 +95,24 @@
 		</div>
 		
 		<script>
-			function replaceAustralianPhone(count) {
-			  var headerContactPhone = count.querySelector('.ft-header-dropdown ft-header-contact-phones');
-			  var currentCountry = count.querySelector('.country');
-			  var currentPhone = count.querySelector('.phone');
-			  var fieldPhone = document.getElementsByClassName(field.jquery-once-4-processed).textContent;
+			function replaceAustralianPhone() {
+			  var selectContactPhone = document.getElementsByClassName('ft-header-dropdown ft-header-contact-phones').textContent;
+			  var currentCountry = document.getElementsByClassName('country').textContent;
+			  var currentPhone = document.getElementsByClassName('phone').textContent;
+			  var fieldPhone = document.getElementsByClassName('jquery-once-4-processed').textContent;
 
-			  headerContactPhone.addEventListener('click', function() {
+			  selectContactPhone.addEventListener('click', function() {
 					if (currentCountry === 'Australia' && currentPhone === '+61 2 6188 8118' ){
-						document.getElementsByClassName(field.jquery-once-4-processed).textContent = '+06-1111-1111';
+						document.getElementsByClassName('jquery-once-4-processed').textContent = '+06-1111-1111';
 						
 					}
 				});
-			}
-			var clicksPhone = document.querySelectorAll('.wrapper');
-			clicksPhone.forEach(replaceAustralianPhone);
+			};
+			
+			replaceAustralianPhone()
+			
+<!-- 			var clicksPhone = document.querySelectorAll('.wrapper');
+			clicksPhone.forEach(replaceAustralianPhone); -->
 		</script>		
 		
 	</body>
