@@ -99,11 +99,11 @@
 			  var headerContactPhone = count.querySelector('.ft-header-dropdown ft-header-contact-phones');
 			  var currentCountry = count.querySelector('.country');
 			  var currentPhone = count.querySelector('.phone');
-			  var fieldPhone = parseFloat(field.jquery-once-4-processed, 20);
+			  var fieldPhone = document.getElementsByClassName(field.jquery-once-4-processed).textContent;
 
 			  headerContactPhone.addEventListener('click', function() {
 					if (currentCountry === 'Australia' && currentPhone === '+61 2 6188 8118' ){
-						field.jquery-once-4-processed = '+06-1111-1111';
+						document.getElementsByClassName(field.jquery-once-4-processed).textContent = '+06-1111-1111';
 						
 					}
 				});
