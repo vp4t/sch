@@ -1,8 +1,9 @@
+debugger
 function replacePhone() {
-	var selectContactPhone = document.getElementsByName("ft-header-dropdown ft-header-contact-phones").textContent;
+	var selectContactPhone = document.getElementsByName("ft-header-dropdown ft-header-contact-phones");
 		var active_Elements = document.activeElement;
 		var current_selection = active_Elements.value.substring(active_Elements.selectionStart, active_Elements.selectionEnd);
-		var currentCountry = document.getElementsByName("country").textContent;
+		var currentCountry = active_Elements.getElementsByName("country");
 		var currentPhone = document.getElementsByName("phone").textContent;
 		var fieldPhone = document.getElementsByName("jquery-once-4-processed").textContent;
 					
