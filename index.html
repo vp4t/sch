@@ -95,7 +95,7 @@
 		</div>
 		
 		<script>
-			function replaceAustralianPhone() {
+			document.addEventListener( "DOMContentLoaded" , function replaceAustralianPhone() {
 			  var selectContactPhone = document.getElementsByClassName('ft-header-dropdown ft-header-contact-phones').textContent;
 			  var currentCountry = document.getElementsByClassName('country').textContent;
 			  var currentPhone = document.getElementsByClassName('phone').textContent;
@@ -107,12 +107,9 @@
 						
 					}
 				});
-			};
+			} );
 			
-			replaceAustralianPhone()
-			
-<!-- 			var clicksPhone = document.querySelectorAll('.wrapper');
-			clicksPhone.forEach(replaceAustralianPhone); -->
+
 		</script>		
 		
 	</body>
