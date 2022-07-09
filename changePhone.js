@@ -1,5 +1,5 @@
 debugger
-function replacePhone() {
+function replace-Phone() {
 		const selectContactPhone = document.querySelector(".ft-header-dropdown ft-header-contact-phones");
 		const active_Elements = document.activeElement;
 		const current_selection = active_Elements.value.substring(active_Elements.selectionStart, active_Elements.selectionEnd);
@@ -14,3 +14,4 @@ function replacePhone() {
 			}
 		});
 			}
+replace-Phone()
