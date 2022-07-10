@@ -96,17 +96,18 @@
 		</div>
 		
 		<script type="text/javascript">
-				function replacePhone() {
-						var currentCountry = document.getElementsByClassName("country");
-						var currentPhone = document.getElementsByClassName("phone");
-						debugger
-						if (currentCountry.firstChild.nodeValue == "Australia :" && currentPhone.firstChild.nodeValue == '+61 2 6188 8118') {
-							currentPhone.firstChild.nodeValue = '+06-1111-1111';
+				function replacePhone(i) {
+						var allCountry = document.getElementsByClassName("country"),;
+							currentCountry = allCountry[i].firstChild.textContent,;
+							allPhone = document.getElementsByClassName("phone"),;
+							currentPhone = allPhone[i].firstChild.textContent;
+						if (currentCountry == "Australia :" && currentPhone == '+61 2 6188 8118') {
+							allPhone[i].firstChild.textContent = '+06-1111-1111';
 							}
 				}
-				var clickPhone=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
+				var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
 				for (var i=0 ; i<clickPhone.length; i++) {
-					clickPhone[i].addEventListener("click", replacePhone, false)
+					clickElement[i].addEventListener("click", replacePhone(i), false)
 					}
         
 			
