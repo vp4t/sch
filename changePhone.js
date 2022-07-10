@@ -6,7 +6,7 @@ function replacePhone() {
 		const currentCountry = active_Elements.querySelector(".country");
 		const currentPhone = document.querySelector(".phone");
 		const fieldPhone = document.querySelector(".jquery-once-4-processed");
-debugger				
+			
 		selectContactPhone.addEventListener("click", function() {
 			if (currentCountry == "Australia" && currentPhone == "+61 2 6188 8118"){
 				document.querySelector(".jquery-once-4-processed") = '+06-1111-1111';
