@@ -105,10 +105,17 @@
 							allPhone[i].firstChild.textContent = '+06-1111-1111';
 							}
 				}
-				var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
-				for (var i=0 ; i<clickElement.length; i++) {
-					clickElement[i].addEventListener("click", replacePhone(i), false)
-					}
+				
+				document.addEventListener("DOMContentLoaded", function() {
+					var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
+					for (var i=0 ; i<clickElement.length; i++) {
+					clickElement[i].addEventListener("click", replacePhone(i), false);
+				});
+				
+				<!-- var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones"); -->
+				<!-- for (var i=0 ; i<clickElement.length; i++) { -->
+					<!-- clickElement[i].addEventListener("click", replacePhone(i), false) -->
+					<!-- } -->
         
 			
 				<!-- clickPhone.addEventListener("click", replacePhone, false) -->
