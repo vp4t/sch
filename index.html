@@ -104,7 +104,16 @@
 							}
 				}
 				var clickPhone=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
-				clickPhone.addEventListener("click", replacePhone, false)
+				for (var i=0 ; i<clickPhone.length; i++) {
+					clickPhone[i].addEventListener("click", replacePhone, false)
+					}
+        
+				
+				<!-- [].forEach.call(clickPhone,function(el){
+    el.addEventListener('click', function (e) {...}) -->
+});
+				
+				<!-- clickPhone.addEventListener("click", replacePhone, false) -->
 		
 		</script>
 
