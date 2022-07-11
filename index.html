@@ -97,7 +97,7 @@
 		
 		<script type="text/javascript">
 				function replacePhone() {
-							var id = currentElement.target.id,
+							var id = clicktElement.target.id,
 							allCountry = document.getElementsByClassName("country"),
 							currentCountry = allCountry[id].firstChild.textContent,
 							allPhone = document.getElementsByClassName("phone"),
@@ -107,7 +107,7 @@
 							}
 				}
 				
-				document.addEventListener("DOMContentLoaded", function(currentElement) {
+				document.addEventListener("DOMContentLoaded", function(clicktElement) {
 					var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
 					for (var i=0 ; i < clickElement.length; i++) {
 						clickElement[i].addEventListener("click", replacePhone);
