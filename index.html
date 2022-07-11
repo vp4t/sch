@@ -97,16 +97,17 @@
 		
 		<script type="text/javascript">
 				function replacePhone() {
-						var allCountry = document.getElementsByClassName("country"),
-							currentCountry = allCountry[i].firstChild.textContent,
+							var id = currentElement.target.id,
+							allCountry = document.getElementsByClassName("country"),
+							currentCountry = allCountry[id].firstChild.textContent,
 							allPhone = document.getElementsByClassName("phone"),
-							currentPhone = allPhone[i].firstChild.textContent;
+							currentPhone = allPhone[id].firstChild.textContent;
 						if (currentCountry == "Australia :" && currentPhone == '+61 2 6188 8118') {
-							allPhone[i].firstChild.textContent = '+06-1111-1111';
+							allPhone[id].firstChild.textContent = '+06-1111-1111';
 							}
 				}
 				
-				document.addEventListener("DOMContentLoaded", function() {
+				document.addEventListener("DOMContentLoaded", function(currentElement) {
 					var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
 					for (var i=0 ; i < clickElement.length; i++) {
 						clickElement[i].addEventListener("click", replacePhone);
