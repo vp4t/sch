@@ -97,6 +97,7 @@
 		
 		<script type="text/javascript">
 				function replacePhone() {
+						for (var i=0 ; i < clickElement.length; i++) {
 							var id = clickElement.target.id,
 							allCountry = document.getElementsByClassName("country"),
 							currentCountry = allCountry[id].firstChild.textContent,
@@ -106,12 +107,18 @@
 							allPhone[id].firstChild.textContent = '+06-1111-1111';
 							}
 				}
+
+				document.addEventListener("DOMContentLoaded", function() {
+						var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
+						clickElement.addEventListener("click", replacePhone)
+				}
+		</script>
 				
-				document.addEventListener("DOMContentLoaded", function(clickElement) {
+<!-- 				document.addEventListener("DOMContentLoaded", function(clickElement) {
 					var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
 					for (var i=0 ; i < clickElement.length; i++) {
 						clickElement[i].addEventListener("click", replacePhone);
-					}});
+					}}); -->
 				
 				<!-- var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones"); -->
 				<!-- for (var i=0 ; i<clickElement.length; i++) { -->
@@ -121,8 +128,6 @@
 			
 				<!-- clickPhone.addEventListener("click", replacePhone, false) -->
 		
-		</script>
-
 		
 <!-- 			document.addEventListener( "DOMContentLoaded" , function replaceAustralianPhone() {
 				var selectContactPhone = document.getElementsByName("ft-header-dropdown ft-header-contact-phones").textContent;
