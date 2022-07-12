@@ -97,7 +97,8 @@
 		
 		<script type="text/javascript">
 				function replacePhone(i) {
-							const allCountry = document.getElementsByClassName("country");	
+							const allCountry = document.getElementsByClassName("country");
+							const i=i.pointerId;
 							const currentCountry = allCountry[i].firstChild.textContent;
 							const allPhone = document.getElementsByClassName("phone");
 							const currentPhone = allPhone[i].firstChild.textContent;
