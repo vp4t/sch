@@ -98,12 +98,12 @@
 		<script type="text/javascript">
 				function replacePhone(i) {
 							const allCountry = document.getElementsByClassName("country");
-							const i=i.pointerId;
-							const currentCountry = allCountry[i].firstChild.textContent;
+							const idEl=i.pointerId;
+							const currentCountry = allCountry[idEl].firstChild.textContent;
 							const allPhone = document.getElementsByClassName("phone");
-							const currentPhone = allPhone[i].firstChild.textContent;
+							const currentPhone = allPhone[idEl].firstChild.textContent;
 						if (currentCountry == "Australia :" && currentPhone == '+61 2 6188 8118') {
-							allPhone[i].firstChild.textContent = '+06-1111-1111';
+							allPhone[idEl].firstChild.textContent = '+06-1111-1111';
 							}
 				}
 				
