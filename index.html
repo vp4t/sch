@@ -110,10 +110,12 @@
 				document.addEventListener("DOMContentLoaded", function(clickElement) {
 					var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
 					for (var i=0 ; i < clickElement.length; i++) {
-						clickElement[i].onclick = replacePhone;
+						clickElement[i].addEventListener("click", replacePhone({i}), false);
 					}});
 		</script>
 				
+				
+								<!-- clickElement[i].onclick = replacePhone; -->
 				
 				<!-- var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones"); -->
 				<!-- for (var i=0 ; i<clickElement.length; i++) { -->
