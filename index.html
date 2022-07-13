@@ -98,7 +98,7 @@
 		<script type="text/javascript">
 				function replacePhone(i) {
 							const allCountry = document.getElementsByClassName("country");
-							const idEl = Array.prototype.indexOf.call(this.parentElement.children, this);
+							const idEl = Array.prototype.indexOf.call(event.target.parentNode.parentNode.childNodes,event.target.parentNode);
 							const currentCountry = allCountry[idEl].firstChild.textContent;
 							const allPhone = document.getElementsByClassName("phone");
 							const currentPhone = allPhone[idEl].firstChild.textContent;
