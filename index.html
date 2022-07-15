@@ -108,8 +108,8 @@
 							const depthScrollProc = Math.round([window.scrollY / document.body.scrollHeight] * 100);
 							const cookieValue = depthScrollProc;
 							const idGA = ga.getAll()[1].get("trackingId");
-								if idGA === "UA-233675153-1" {
-										if (currentCountry == "Australia :" && currentPhone == '+61 2 6188 8118') {
+								if (idGA === 'UA-233675153-1') {
+										if (currentCountry == 'Australia :' && currentPhone == '+61 2 6188 8118') {
 											allPhone[idEl].firstChild.textContent = '+06-1111-1111';
 											document.cookie = cookieName+"="+cookieValue+"="+"SameSite=None; Secure";
 										}
