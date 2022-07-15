@@ -109,7 +109,7 @@
 							const cookieValue = depthScrollProc;
 							const idGA = ga.getAll()[1].get("trackingId");
 								if (idGA === 'UA-233675153-1') {
-										if (currentCountry == 'Australia :' && currentPhone == '+61 2 6188 8118') {
+										if (currentCountry === 'Australia :' && currentPhone === '+61 2 6188 8118') {
 											allPhone[idEl].firstChild.textContent = '+06-1111-1111';
 											document.cookie = cookieName+"="+cookieValue+"="+"SameSite=None; Secure";
 										}
@@ -118,7 +118,7 @@
 				
 				document.addEventListener("DOMContentLoaded", function(clickElement) {
 					var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
-					for (var i =0 ; i < clickElement.length; i++) {
+					for (var i = 0 ; i < clickElement.length; i++) {
 						clickElement[i].addEventListener("click", replacePhone, true);
 					}});
 		</script>
