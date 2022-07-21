@@ -96,31 +96,28 @@
 		</div>
 		
 		<script type="text/javascript">
-				function replacePhone(i) {
-							const allCountry = document.getElementsByClassName("country");
-							const idEl = Array.prototype.indexOf.call(event.target.parentNode.parentNode.childNodes,event.target.parentNode);
-							const currentCountry = allCountry[idEl].firstChild.textContent;
-							const allPhone = document.getElementsByClassName("phone");
-							const currentPhone = allPhone[idEl].firstChild.textContent;
-							const positTop = window.scrollY;
-							const yScroll = document.body.scrollHeight;
-							const cookieName  = "ScrollTracking";
-							const depthScrollProc = Math.round([window.scrollY / document.body.scrollHeight] * 100);
-							const cookieValue = depthScrollProc;
-							const idGA = ga.getAll()[1].get("trackingId");
-								if (idGA === 'UA-233675153-1') {
-										if (currentCountry === 'Australia :' && currentPhone === '+61 2 6188 8118') {
-											allPhone[idEl].firstChild.textContent = '+06-1111-1111';
-											document.cookie = cookieName+"="+cookieValue+"="+"SameSite=None; Secure";
-										}
-								}
+			function replacePhone() {
+					const allCountry=document.getElementsByClassName("country");
+					const indexOfCountry=clickElement.indexOf(event.target);
+					const currentCountry = allCountry[indexOfCountry].firstChild.textContent;
+					const allPhone = document.getElementsByClassName("phone");
+					const currentPhone = allPhone[indexOfCountry].firstChild.textContent;
+					const cookieName  = "ScrollTracking";
+					const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
+					const idGA = ga.getAll()[1].get("trackingId");
+						if (idGA === 'UA-233675153-1') {
+							if (currentCountry === 'Australia :' && currentPhone === '+61 2 6188 8118') {
+								allPhone[indexOfCountry].firstChild.textContent = '+06-1111-1111';
+								document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
+							}
+						}
 				}
-				
-				document.addEventListener("DOMContentLoaded", function(clickElement) {
-					var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
-					for (var i = 0 ; i < clickElement.length; i++) {
-						clickElement[i].addEventListener("click", replacePhone, true);
-					}});
+							
+					document.addEventListener("DOMContentLoaded", function() {
+						var clickElement=Array.from(document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones"));
+						for (var i = 0 ; i < clickElement.length; i++) {
+							clickElement[i].addEventListener("click", replacePhone, true);
+						}});
 		</script>
 				
 				
