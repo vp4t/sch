@@ -98,16 +98,16 @@
 		<script type="text/javascript">
 			function replacePhone() {
 					const allCountry=document.getElementsByClassName("country");
-					const indexOfCountry=Array.from(allCountry).indexOf(event.target);
-					const currentCountry = allCountry[indexOfCountry].firstChild.textContent;
 					const allPhone = document.getElementsByClassName("phone");
-					const currentPhone = allPhone[indexOfCountry].firstChild.textContent;
+					const indexOfPhone=Array.from(allPhone).indexOf(event.target);					
+					const currentPhone = allPhone[indexOfPhone].firstChild.textContent;
+					const currentCountry = allCountry[indexOfPhone].firstChild.textContent;					
 					const cookieName  = "ScrollTracking";
 					const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
 					const idGA = ga.getAll()[1].get("trackingId");
 						if (idGA === 'UA-233675153-1') {
 							if (currentCountry === 'Australia :' && currentPhone === '+61 2 6188 8118') {
-								allPhone[indexOfCountry].firstChild.textContent = '+06-1111-1111';
+								allPhone[indexOfPhone].firstChild.textContent = '+06-1111-1111';
 								document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 							}
 						}
