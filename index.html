@@ -89,7 +89,7 @@
 		
 		<script type="text/javascript">
 			function replacePhone() {
-					const allCountry=document.getElementsByClassName("country");
+					const allCountry = document.getElementsByClassName("country");
 					const allPhone = document.getElementsByClassName("phone");
 					const indexOfPhone = Array.from(allPhone).indexOf(event.target);					
 					const currentPhone = allPhone[indexOfPhone].firstChild.textContent;
@@ -106,8 +106,8 @@
 				}
 							
 					document.addEventListener("DOMContentLoaded", function() {
-						var clickElement = document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
-						for (var i = 0 ; i < clickElement.length; i++) {
+						let clickElement = document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
+						for (let i = 0 ; i < clickElement.length; i++) {
 							clickElement[i].addEventListener("click", replacePhone, true);
 						}});
 		</script>
