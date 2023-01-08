@@ -89,14 +89,14 @@
 		
 		<script type="text/javascript">
 			function replacePhone() {
-					const allCountry = document.getElementsByClassName("country");
-					const allPhone = document.getElementsByClassName("phone");
+					const allCountry = document.querySelectorAll('.country');
+					const allPhone = document.querySelectorAll('.phone');
 					const indexOfPhone = Array.from(allPhone).indexOf(event.target);					
 					const currentPhone = allPhone[indexOfPhone].firstChild.textContent;
 					const currentCountry = allCountry[indexOfPhone].firstChild.textContent;					
 					const cookieName  = "ScrollTracking";
 					const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
-					const idGA = ga.getAll()[1].get("trackingId");
+					const idGA = ga.getAll()[0].get("trackingId");
 						if (idGA === 'UA-233675153-1') {
 							if (currentCountry === 'Australia :' && currentPhone === '+61 2 6188 8118') {
 								allPhone[indexOfPhone].firstChild.textContent = '+06-1111-1111';
@@ -104,15 +104,22 @@
 							}
 						}
 				}
-							
-					document.addEventListener("DOMContentLoaded", function() {
-						let clickElement = document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
-						for (let i = 0 ; i < clickElement.length; i++) {
-							clickElement[i].addEventListener("click", replacePhone, true);
-						}});
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const clickElements = document.querySelectorAll('.ft-header-dropdown ft-header-contact-phones');
+                clickElements.forEach((element)=> element.addEventListener("click", replacePhone, true));
+            });							
+
 		</script>
 				
 				
+
+/*					document.addEventListener("DOMContentLoaded", function() {
+						let clickElement = document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones");
+						for (let i = 0 ; i < clickElement.length; i++) {
+							clickElement[i].addEventListener("click", replacePhone, true);
+						}}); */
+
 								<!-- clickElement[i].onclick = replacePhone; -->
 				
 				<!-- var clickElement=document.getElementsByClassName("ft-header-dropdown ft-header-contact-phones"); -->
