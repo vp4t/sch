@@ -72,44 +72,65 @@
 			<div class="content">
 				<div class="item-list">
 					<h3 class="jquery-once-4-processed">+41 43 505 2888</h3>
-					<ul class="ft-header-dropdown ft-header-contact-phones"> <li class="first">
-						<a href="tel:+18008841721"><span class="country">United States :</span><span class="phone">+1 (800) 884-1721</span></a> </li>
+					<ul class="ft-header-dropdown ft-header-contact-phones"> 
+						<li class="first">
+							<a href="tel:+18008841721">
+								<span class="country">United States :</span>
+								<span class="phone">+1 (800) 884-1721</span>
+							</a>
+						</li>
 						<li>
-						<a href="tel:+61261888118"><span class="country">Australia :</span><span class="phone">+61 2 6188 8118</span></a> </li>
+							<a href="tel:+61261888118">
+								<span class="country">Australia :</span>
+								<span class="phone">+61 2 6188 8118</span>
+							</a>
+						</li>
 						<li>
-						<a href="tel:+6531590718"><span class="country">Singapore :</span><span class="phone">+65 3159 0718</span></a> </li>
+							<a href="tel:+6531590718">
+								<span class="country">Singapore :</span>
+								<span class="phone">+65 3159 0718</span>
+							</a>
+						</li>
 						<li>
-						<a href="tel:+41435052888"><span class="country">Europe :</span><span class="phone">+41 43 505 2888</span></a> </li>
+							<a href="tel:+41435052888">
+								<span class="country">Europe :</span>
+								<span class="phone">+41 43 505 2888</span>
+							</a>
+						</li>
 						<li class="last">
-						<a href="tel:+41435052888"><span class="country">Switzerland :</span><span class="phone">+41435052888</span></a> </li>
+							<a href="tel:+41435052888">
+								<span class="country">Switzerland :</span>
+								<span class="phone">+41435052888</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		
 		<script type="text/javascript">
-			function replacePhone() {
-					const allCountry = document.querySelectorAll('.country');
-					const allPhone = document.querySelectorAll('.phone');
-					const indexOfPhone = Array.from(allPhone).indexOf(event.target);					
-					const currentPhone = allPhone[indexOfPhone].firstChild.textContent;
-					const currentCountry = allCountry[indexOfPhone].firstChild.textContent;					
+			const idGA = ga.getAll()[0].get("trackingId");
+			if (idGA === 'UA-233675153-1') {
+				const allCountries = document.querySelectorAll('.country');
+				allCountries.forEach((element, index) => {
+					if ( element.innerText.toLowerCase().indexOf('australia') != -1)
+						{ const indexAustralia = index;
+                         const clickElements = document.querySelectorAll('.ft-header-dropdown');
+						 if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
+						 { window.addEventListener( 'click', replacePhone(indexAustralia) ) } }
+				})
+
+			function replacePhone(indexAustralia) {
+					const allPhones = document.querySelectorAll('.phone');
+					//const indexOfPhone = Array.from(allPhones).indexOf(event.target);					
+					//const currentPhone = allPhones[indexOfPhone].firstChild.textContent;
+					//const currentCountry = allCountries[indexOfPhone].firstChild.textContent;					
 					const cookieName  = "ScrollTracking";
 					const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
-					const idGA = ga.getAll()[0].get("trackingId");
-						if (idGA === 'UA-233675153-1') {
-							if (currentCountry === 'Australia :' && currentPhone === '+61 2 6188 8118') {
-								allPhone[indexOfPhone].firstChild.textContent = '+06-1111-1111';
-								document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
-							}
-						}
+					allPhones[indexAustralia].firstChild.textContent = '+06-1111-1111';
+					document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 				}
-
-            document.addEventListener("DOMContentLoaded", function() {
-                const clickElements = document.querySelectorAll('.ft-header-dropdown ft-header-contact-phones');
-                clickElements.forEach((element)=> element.addEventListener("click", replacePhone, true));
-            });							
-
+			}
 		</script>
 				
 				
