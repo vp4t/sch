@@ -120,13 +120,19 @@
 							document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 						}
 						const allCountries = document.querySelectorAll('.country');
-						allCountries.forEach((element, index) => {
-							const indexOfClick = Array.from(element.parentElement.children).indexOf(element);
+						allCountries.forEach((element, index) =>
+						 {
+							const indexOfClick;
+							element.addEventListener("cliclk", () =>
+							{
+								indexOfClick = Number(`${ index }`);
+							});
+							//const indexOfClick = Array.from(element.parentElement.children).indexOf(element);
 							if ( indexOfClick && element.innerText.toLowerCase().indexOf('australia') != -1 )
 								{ if ( clickElements[0].children[index].innerText.includes('+61 2 6188 8118') )
 									{ return replacePhone(index); }
 								}
-							});
+						});
 				}
 			}
 
