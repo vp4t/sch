@@ -108,36 +108,38 @@
 		</div>
 		
 		<script>
-			const checkConditions = () => {
+			const checkConditions = () => 
+			{
 				const idGA = ga.getAll()[0].get("trackingId");
-				if (idGA === 'UA-233675153-1') {
-						const replacePhone = (indexAustralia) => {
-							const allPhones = document.querySelectorAll('.phone');
-							//const indexAustralia = Array.from(allPhones).indexOf(event.target);					
+				if (idGA === 'UA-233675153-1') 
+				{
+						const replacePhone = (indexAustralia) =>
+						 {
+							const allPhones = document.querySelectorAll(".phone");
 							const cookieName  = "ScrollTracking";
 							const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
-							allPhones[indexAustralia].firstChild.textContent = '+06-1111-1111';
+							allPhones[indexAustralia].firstChild.textContent = "+06-1111-1111";
 							document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 						}
-						const allCountries = document.querySelectorAll('.country');
+						const allCountries = document.querySelectorAll(".country");
 						allCountries.forEach((element, index) =>
 						 {
-							const indexOfClick;
+							const indexOfClick = undefined;
 							element.addEventListener("cliclk", () =>
 							{
 								indexOfClick = Number(`${ index }`);
 							});
-							//const indexOfClick = Array.from(element.parentElement.children).indexOf(element);
-							if ( indexOfClick && element.innerText.toLowerCase().indexOf('australia') != -1 )
-								{ if ( clickElements[0].children[index].innerText.includes('+61 2 6188 8118') )
+
+							if ( indexOfClick && element.innerText.toLowerCase().indexOf("australia") != -1 )
+								{ if ( clickElements[0].children[index].innerText.includes("+61 2 6188 8118") )
 									{ return replacePhone(index); }
 								}
 						});
 				}
 			}
 
-			const clickElements = document.querySelectorAll('.ft-header-dropdown');
-			clickElements[0].addEventListener('click', checkConditions)
+			const clickElements = document.querySelectorAll(".ft-header-dropdown");
+			clickElements[0].addEventListener("click", checkConditions)
 
 /* 			document.addEventListener("DOMContentLoaded", function() {
 				checkConditions();
