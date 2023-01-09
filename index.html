@@ -115,10 +115,10 @@
 					allCountries.forEach((element, index) => {
 						if ( element.innerText.toLowerCase().indexOf('australia') != -1)
 							{ const indexAustralia = index;
-//							const clickElements = document.querySelectorAll('.ft-header-dropdown');
-							if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
-							{ window.addEventListener( 'click', replacePhone, true ) } }
-					})
+								if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
+								{ return replacePhone; }
+							}
+						});
 
 				const replacePhone = () => {
 						const allPhones = document.querySelectorAll('.phone');
