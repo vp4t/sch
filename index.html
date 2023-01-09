@@ -118,7 +118,7 @@
 							{ const indexAustralia = index;
 							const clickElements = document.querySelectorAll('.ft-header-dropdown');
 							if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
-							{ window.addEventListener( 'click', replacePhone(indexAustralia) ) } }
+							{ window.addEventListener( 'click', replacePhone(indexAustralia), true ) } }
 					})
 
 				function replacePhone(indexAustralia) {
