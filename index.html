@@ -122,9 +122,10 @@
 							document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 						}
 						const allCountries = document.querySelectorAll(".country");
+						const indexOfClick = null;
+						
 						allCountries.forEach((element, index) =>
 						 {
-							const indexOfClick = null;
 							element.addEventListener("cliclk", () =>
 							{
 								indexOfClick = index ;
