@@ -121,9 +121,9 @@
 						}
 						const allCountries = document.querySelectorAll('.country');
 						allCountries.forEach((element, index) => {
-							if ( element.innerText.toLowerCase().indexOf('australia') != -1)
-								{ const indexAustralia = index;
-									if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
+							const indexOfClick = clickElements[0].children[index].onclick = () => index
+							if ( indexOfClick && element.innerText.toLowerCase().indexOf('australia') != -1 )
+								{ if ( clickElements[0].children[indexOfClick].innerText.includes('+61 2 6188 8118') )
 									{ return replacePhone(); }
 								}
 							});
