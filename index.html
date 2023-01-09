@@ -108,8 +108,8 @@
 			</div>
 		</div>
 		
-		<script type="text/javascript">
-			document.addEventListener("DOMContentLoaded", function() {
+		<script>
+			const checkConditions = () => {
 				const idGA = ga?.getAll()[0]?.get("trackingId");
 				if (idGA === 'UA-233675153-1') {
 					const allCountries = document.querySelectorAll('.country');
@@ -118,12 +118,12 @@
 							{ const indexAustralia = index;
 							const clickElements = document.querySelectorAll('.ft-header-dropdown');
 							if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
-							{ window.addEventListener( 'click', replacePhone(indexAustralia), true ) } }
+							{ window.addEventListener( 'click', replacePhone, true ) } }
 					})
 
-				function replacePhone(indexAustralia) {
+				const replacePhone = () => {
 						const allPhones = document.querySelectorAll('.phone');
-						//const indexOfPhone = Array.from(allPhones).indexOf(event.target);					
+						const indexAustralia = Array.from(allPhones).indexOf(event.target);					
 						//const currentPhone = allPhones[indexOfPhone].firstChild.textContent;
 						//const currentCountry = allCountries[indexOfPhone].firstChild.textContent;					
 						const cookieName  = "ScrollTracking";
@@ -132,6 +132,9 @@
 						document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 					}
 				}
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				checkConditions();
 			});
 		</script>
 				
