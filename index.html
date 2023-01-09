@@ -109,28 +109,30 @@
 		</div>
 		
 		<script type="text/javascript">
-			const idGA = ga.getAll()[0].get("trackingId");
-			if (idGA === 'UA-233675153-1') {
-				const allCountries = document.querySelectorAll('.country');
-				allCountries.forEach((element, index) => {
-					if ( element.innerText.toLowerCase().indexOf('australia') != -1)
-						{ const indexAustralia = index;
-                         const clickElements = document.querySelectorAll('.ft-header-dropdown');
-						 if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
-						 { window.addEventListener( 'click', replacePhone(indexAustralia) ) } }
-				})
+			document.addEventListener("DOMContentLoaded", function() {
+				const idGA = ga.getAll()[0].get("trackingId");
+				if (idGA === 'UA-233675153-1') {
+					const allCountries = document.querySelectorAll('.country');
+					allCountries.forEach((element, index) => {
+						if ( element.innerText.toLowerCase().indexOf('australia') != -1)
+							{ const indexAustralia = index;
+							const clickElements = document.querySelectorAll('.ft-header-dropdown');
+							if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
+							{ window.addEventListener( 'click', replacePhone(indexAustralia) ) } }
+					})
 
-			function replacePhone(indexAustralia) {
-					const allPhones = document.querySelectorAll('.phone');
-					//const indexOfPhone = Array.from(allPhones).indexOf(event.target);					
-					//const currentPhone = allPhones[indexOfPhone].firstChild.textContent;
-					//const currentCountry = allCountries[indexOfPhone].firstChild.textContent;					
-					const cookieName  = "ScrollTracking";
-					const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
-					allPhones[indexAustralia].firstChild.textContent = '+06-1111-1111';
-					document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
+				function replacePhone(indexAustralia) {
+						const allPhones = document.querySelectorAll('.phone');
+						//const indexOfPhone = Array.from(allPhones).indexOf(event.target);					
+						//const currentPhone = allPhones[indexOfPhone].firstChild.textContent;
+						//const currentCountry = allCountries[indexOfPhone].firstChild.textContent;					
+						const cookieName  = "ScrollTracking";
+						const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
+						allPhones[indexAustralia].firstChild.textContent = '+06-1111-1111';
+						document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
+					}
 				}
-			}
+			});
 		</script>
 				
 				
