@@ -111,25 +111,22 @@
 			const checkConditions = () => {
 				const idGA = ga?.getAll()[0]?.get("trackingId");
 				if (idGA === 'UA-233675153-1') {
-					const allCountries = document.querySelectorAll('.country');
-					allCountries.forEach((element, index) => {
-						if ( element.innerText.toLowerCase().indexOf('australia') != -1)
-							{ const indexAustralia = index;
-								if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
-								{ return replacePhone; }
-							}
-						});
-
-				const replacePhone = () => {
-						const allPhones = document.querySelectorAll('.phone');
-						const indexAustralia = Array.from(allPhones).indexOf(event.target);					
-						//const currentPhone = allPhones[indexOfPhone].firstChild.textContent;
-						//const currentCountry = allCountries[indexOfPhone].firstChild.textContent;					
-						const cookieName  = "ScrollTracking";
-						const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
-						allPhones[indexAustralia].firstChild.textContent = '+06-1111-1111';
-						document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
-					}
+						const replacePhone = () => {
+							const allPhones = document.querySelectorAll('.phone');
+							const indexAustralia = Array.from(allPhones).indexOf(event.target);					
+							const cookieName  = "ScrollTracking";
+							const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
+							allPhones[indexAustralia].firstChild.textContent = '+06-1111-1111';
+							document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
+						}
+						const allCountries = document.querySelectorAll('.country');
+						allCountries.forEach((element, index) => {
+							if ( element.innerText.toLowerCase().indexOf('australia') != -1)
+								{ const indexAustralia = index;
+									if ( clickElements[0].children[indexAustralia].innerText.includes('+61 2 6188 8118') )
+									{ return replacePhone(); }
+								}
+							});
 				}
 			}
 
