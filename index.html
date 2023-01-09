@@ -123,7 +123,7 @@
 						allCountries.forEach((element, index) => {
 							const indexOfClick = clickElements[0].children[index].onclick = () => index
 							if ( indexOfClick && element.innerText.toLowerCase().indexOf('australia') != -1 )
-								{ if ( clickElements[0].children[indexOfClick].innerText.includes('+61 2 6188 8118') )
+								{ if ( clickElements[0].children[index].innerText.includes('+61 2 6188 8118') )
 									{ return replacePhone(); }
 								}
 							});
