@@ -124,10 +124,10 @@
 						const allCountries = document.querySelectorAll(".country");
 						allCountries.forEach((element, index) =>
 						 {
-							const indexOfClick = undefined;
+							const indexOfClick = null;
 							element.addEventListener("cliclk", () =>
 							{
-								indexOfClick = Number(`${ index }`);
+								indexOfClick = index ;
 							});
 
 							if ( indexOfClick && element.innerText.toLowerCase().indexOf("australia") != -1 )
