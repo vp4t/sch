@@ -110,7 +110,7 @@
 		
 		<script type="text/javascript">
 			document.addEventListener("DOMContentLoaded", function() {
-				const idGA = ga?.getAll()[0].get("trackingId");
+				const idGA = ga?.getAll()[0]?.get("trackingId");
 				if (idGA === 'UA-233675153-1') {
 					const allCountries = document.querySelectorAll('.country');
 					allCountries.forEach((element, index) => {
