@@ -124,13 +124,12 @@
 						
 						const allPhones = Array.from(document.querySelectorAll(".phone"));
 						const indexOfClick = allPhones.indexOf(event.target);
+						const allLines = Array.from(clickElements[0].children);
 
-						clickElements[0].children.forEach((element, index) =>
+						allLines.forEach((element, index) =>
 						 {
-							if ( indexOfClick && element.innerText.toLowerCase().indexOf("australia") != -1 )
-								{ if ( clickElements[0].children[index].innerText.includes("+61 2 6188 8118") )
+							if ( indexOfClick && element.innerText.toLowerCase().includes("australia") && element.innerText.includes("+61 2 6188 8118") )
 									{ return replacePhone(index); }
-								}
 						});
 				}
 			}
