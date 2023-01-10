@@ -111,32 +111,29 @@
 			const checkConditions = () => 
 			{
 				const idGA = ga.getAll()[0].get("trackingId");
-				if (idGA === 'UA-233675153-1') 
+				if (idGA === "UA-233675153-1") 
 				{
-						const replacePhone = (indexAustralia) =>
-						 {
+					const replacePhone = (indexAustralia) =>
+						{
 							const cookieName  = "ScrollTracking";
 							const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
 							allPhones[indexAustralia].firstChild.textContent = "+06-1111-1111";
 							document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 						}
 						
-						const allPhones = document.querySelectorAll(".phone");
-						const arrayPhones = Array.from(allPhones)
-						const indexOfClick = arrayPhones.indexOf(event.target);
-						const allLines = Array.from(clickElements[0].children);
+					const allPhones = document.querySelectorAll(".phone");
+					const arrayPhones = Array.from(allPhones)
+					const indexOfClick = arrayPhones.indexOf(event.target);
+					const allLines = Array.from(clickElements[0].children);
 
-						if ( allLines[indexOfClick].innerText.toLowerCase().includes("australia") && allLines[indexOfClick].innerText.includes("+61 2 6188 8118") )
-									{ replacePhone(indexOfClick); }
+					if ( allLines[indexOfClick].innerText.toLowerCase().includes("australia") && allLines[indexOfClick].innerText.includes("+61 2 6188 8118") )
+								{ replacePhone(indexOfClick); }
 				}
 			}
 
 			const clickElements = document.querySelectorAll(".ft-header-dropdown");
-			clickElements[0].addEventListener("click", checkConditions)
+			clickElements[0].addEventListener("click", checkConditions);
 
-/* 			document.addEventListener("DOMContentLoaded", function() {
-				checkConditions();
-			}); */
 		</script>
 				
 				
