@@ -115,15 +115,15 @@
 				{
 						const replacePhone = (indexAustralia) =>
 						 {
-							const allPhones = document.querySelectorAll(".phone");
 							const cookieName  = "ScrollTracking";
 							const depthScrollPercent = Math.round([window.scrollY / document.body.scrollHeight] * 100);
 							allPhones[indexAustralia].firstChild.textContent = "+06-1111-1111";
 							document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 						}
 						
-						const allPhones = Array.from(document.querySelectorAll(".phone"));
-						const indexOfClick = allPhones.indexOf(event.target);
+						const allPhones = document.querySelectorAll(".phone");
+						const arrayPhones = Array.from(allPhones)
+						const indexOfClick = arrayPhones.indexOf(event.target);
 						const allLines = Array.from(clickElements[0].children);
 
 						allLines.forEach((element, index) =>
