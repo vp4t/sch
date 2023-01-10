@@ -121,10 +121,10 @@
 							allPhones[indexAustralia].firstChild.textContent = "+06-1111-1111";
 							document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 						}
-						const allCountries = document.querySelectorAll(".country");
+						const allLists = document.querySelectorAll("li");
 						const indexOfClick = null;
-						
-						allCountries.forEach((element, index) =>
+
+						allLists.forEach((element, index) =>
 						 {
 							element.addEventListener("cliclk", () =>
 							{
