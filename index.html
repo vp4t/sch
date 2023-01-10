@@ -121,7 +121,7 @@
 							allPhones[indexAustralia].firstChild.textContent = "+06-1111-1111";
 							document.cookie = cookieName+"="+depthScrollPercent+"="+"SameSite=None; Secure";
 						}
-						const allLists = clickElements[0].children
+						const allLists = Array.from(clickElements[0].children)
 						const indexOfClick = null;
 
 						allLists.forEach((element, index) =>
