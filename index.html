@@ -126,7 +126,8 @@
 					const indexOfClick = arrayPhones.indexOf(event.target);
 					const allLines = Array.from(clickElements[0].children);
 
-					if ( allLines[indexOfClick].innerText.toLowerCase().includes("australia") && allLines[indexOfClick].innerText.includes("+61 2 6188 8118") )
+					if (allLines[indexOfClick].innerText.toLowerCase().includes("australia") &&
+						allLines[indexOfClick].innerText.includes("+61 2 6188 8118"))
 								{ replacePhone(indexOfClick); }
 				}
 			}
